@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Abstract Factory Pattern</h1>
+            <p>
+                In this example I am building an Abstract Factory Pattern.<br />
+                You will see that the code is using a Generator to generate random objects. The generator itself is injected with a factory. It is unaware of what type of factory it is and what it will generate.<br />
+                I only knows how it can create the objects and what methods the factory has, thanks to the abstract factory it is implementing.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Factory A</h2>
+            <p><i>Its elements will end with an A.</i></p>
+            {% for i in 0..9 %}
+                {{ dump(generatorA.generate) }}
+            {% endfor %}
+        </div>
+        <div class="col">
+            <h2>Factory B</h2>
+            <p><i>Its elements will end with a B.</i></p>
+            {% for i in 0..9 %}
+                {{ dump(generatorB.generate) }}
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Visitor Pattern</h1>
+            <p>
+                In this example I am building a Visitor Pattern.<br />
+                This pattern allows us to separate logic from the objects on which it operates. It is mainly used when a need to perform operations on various objects arises.<br />
+                Let's say the operation that needs to be performed is auxiliary behaviour and does not belong to the business logic. Setting up a visitor would be a great solution.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Visitor A</h2>
+            <p><i>Will use FirstConcreteVisitor class to apply logic and will say it is applying 'First Action'.</i></p>
+            {% for visitee in visitees %}
+                {{ dump(visitee.accept(visitorA)) }}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Visitor B</h2>
+            <p><i>Will use SecondConcreteVisitor class to apply logic and will say it is applying 'Second Action'.</i></p>
+            {% for visitee in visitees %}
+                {{ dump(visitee.accept(visitorB)) }}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Upgrade required - Visitor C</h2>
+            <p><i>Let's say a new feature is required. Simply create a new Visitor class and write the logic there.</i></p>
+            {% for visitee in visitees %}
+                {{ dump(visitee.accept(visitorC)) }}
+            {% endfor %}
+        </div>
+    </div>
+</div>
