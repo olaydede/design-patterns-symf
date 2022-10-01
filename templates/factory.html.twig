@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Factory Method Pattern</h1>
+            <p>
+                In this example I am building a Fectory Method.<br />
+                This pattern is used to separate object construction code from the code that will use the object. It makes it easier to extend object construction code independently of the rest of the code.<br />
+                Though they might seem similar, there is a different between a Factory Method and an Abstract Factory. Where Factory Method is implemented by inheritance, Abstract Factory is implemented by composition.<br />
+            </p>
+            <p>
+                A Factory Method is used to create one product while Abstract Factory is about creating families of dependent products.
+                Here is a good <a href="https://stackoverflow.com/questions/5739611/what-are-the-differences-between-abstract-factory-and-factory-design-patterns" target="_blank">article</a>.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Factory A</h2>
+            {{ dump(sorterA.sort) }}
+        </div>
+        <div class="col">
+            <h2>Factory B</h2>
+            {{ dump(sorterB.sort) }}
+        </div>
+    </div>
+</div>
