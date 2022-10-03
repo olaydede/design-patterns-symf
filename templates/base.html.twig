@@ -14,6 +14,12 @@
         {% endblock %}
     </head>
     <body>
+        <nav class="navbar bg-dark">
+            <div class="container-fluid">
+
+                <span class="navbar-brand my-2 h1 text-white-50"><a class="text-white-50 text-decoration-none" href="{{ path('home') }}">Design Patterns</a></span>
+            </div>
+        </nav>
         {% block body %}{% endblock %}
     </body>
 </html>

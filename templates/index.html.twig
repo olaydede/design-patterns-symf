@@ -1,4 +1,6 @@
-<div class="container">
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="container mt-5 mb-5 text-center">
     <div class="row">
         <div class="col">
             <h1>Learning Design Patterns in PHP</h1>
@@ -8,21 +10,16 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <ul>
-                <li><strong>Creational Patterns</strong></li>
-                <ul>
-                    <li><a href="{{ path('factory') }}">Factory Method</a></li>
-                    <li><a href="{{ path('abstract-factory') }}">Abstract Factory</a></li>
-                </ul>
-                <li><strong>Behavioral Patterns</strong></li>
-                <ul>
-                    <li><a href="{{ path('visitor') }}">Visitor</a></li>
-                </ul>
-                <li><strong>Structural Patterns</strong></li>
-                <ul>
-                    <li><a href="{{ path('proxy') }}">Proxy</a></li>
-                </ul>
+            <ul class="list-group">
+                <li class="list-group-item active"><strong>Creational Patterns</strong></li>
+                <li class="list-group-item"><a href="{{ path('factory') }}">Factory Method</a></li>
+                <li class="list-group-item"><a href="{{ path('abstract-factory') }}">Abstract Factory</a></li>
+                <li class="list-group-item active"><strong>Behavioral Patterns</strong></li>
+                <li class="list-group-item"><a href="{{ path('visitor') }}">Visitor</a></li>
+                <li class="list-group-item active"><strong>Structural Patterns</strong></li>
+                <li class="list-group-item"><a href="{{ path('proxy') }}">Proxy</a></li>
             </ul>
         </div>
     </div>
 </div>
+{% endblock %}
