@@ -5,13 +5,16 @@ use App\PatternFactory\ConcreteFactoryA;
 use App\PatternFactory\ConcreteFactoryB;
 use App\PatternFactory\SubjectSorter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class FactoryController extends AbstractController
 {
+    /**
+     * @return Response
+     */
     #[Route("/factory", name:"factory")]
-    public function indexAction(Request $request)
+    public function indexAction(): Response
     {
         // Create Factories
         $factoryA = new ConcreteFactoryA();
