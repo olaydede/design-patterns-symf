@@ -1,16 +1,23 @@
 <?php
 namespace App\PatternAbstractFactory;
 
+use JetBrains\PhpStorm\Pure;
+
 class ConcreteFactoryA implements AbstractFactory
 {
-    public function createA(): AbstractElementA
+    /**
+     * @return AbstractElementA
+     */
+    #[Pure] public function createA(): AbstractElementA
     {
         return new ConcreteElementAA();
     }
 
-    public function createB(): AbstractElementB
+    /**
+     * @return AbstractElementB
+     */
+    #[Pure] public function createB(): AbstractElementB
     {
         return new ConcreteElementBA();
     }
-
 }

@@ -1,11 +1,15 @@
 <?php
 namespace App\PatternFactory;
 
+use JetBrains\PhpStorm\Pure;
+
 class ConcreteFactoryB extends AbstractFactory
 {
-    public function factoryMethod(): AbstractSubject
+    /**
+     * @return AbstractSubject
+     */
+    #[Pure] public function factoryMethod(): AbstractSubject
     {
         return new SubjectB();
     }
-
 }

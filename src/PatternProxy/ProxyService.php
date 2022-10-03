@@ -1,17 +1,22 @@
 <?php
 namespace App\PatternProxy;
 
+use JetBrains\PhpStorm\Pure;
+
 class ProxyService implements Intermediable
 {
     public RealService $realService;
     public string $cachedExecution = '';
 
-    public function __construct()
+    #[Pure] public function __construct()
     {
         $this->realService = new RealService();
     }
 
-    public function prepare()
+    /**
+     * @return string
+     */
+    public function prepare(): string
     {
         if ($this->realService->status === RealServiceStatuses::UNPREPARED) {
             return $this->realService->prepare();
@@ -19,20 +24,25 @@ class ProxyService implements Intermediable
         return 'Prepared. Took me 0 seconds.';
     }
 
-    public function execute()
+    /**
+     * @return string
+     */
+    public function execute(): string
     {
         if (! $this->cachedExecution) {
             $executionString = $this->realService->execute();
             $this->cachedExecution = $executionString;
             return $executionString;
         } else {
-            return 'FROM PROXY: '.$this->cachedExecution;
+            return "FROM PROXY: \n" . $this->cachedExecution;
         }
     }
 
-    public function clean()
+    /**
+     * @return bool
+     */
+    public function clean(): bool
     {
         return $this->realService->clean();
     }
-
 }

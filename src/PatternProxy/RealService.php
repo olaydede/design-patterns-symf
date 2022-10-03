@@ -5,26 +5,30 @@ class RealService implements Intermediable
 {
     public RealServiceStatuses $status = RealServiceStatuses::UNPREPARED;
 
-    public function prepare()
+    /**
+     * @return string
+     */
+    public function prepare(): string
     {
         sleep(3);
         $this->status = RealServiceStatuses::PREPARED;
         return 'Prepared. Took me 3 seconds.';
     }
 
-    public function execute()
+    /**
+     * @return string
+     */
+    public function execute(): string
     {
-        $executionString = '';
-        for ($i = 0; $i < 100; $i++) {
-            $executionString .= 'executing...\n';
-        }
-        return $executionString;
+        return str_repeat("Executing...\n", 10);
     }
 
-    public function clean()
+    /**
+     * @return bool
+     */
+    public function clean(): bool
     {
         $this->status = RealServiceStatuses::UNPREPARED;
         return true;
     }
-
 }

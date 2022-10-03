@@ -3,14 +3,20 @@ namespace App\PatternVisitor;
 
 class VisiteeA implements Visitable, Describable
 {
-    public function __toString()
+    /**
+     * @return string
+     */
+    public function __toString(): string
     {
         return 'Hello, I am an A';
     }
 
-    public function accept(Visitor $visitor)
+    /**
+     * @param Visitor $visitor
+     * @return string
+     */
+    public function accept(Visitor $visitor): string
     {
         return $visitor->visitA($this);
     }
-
 }

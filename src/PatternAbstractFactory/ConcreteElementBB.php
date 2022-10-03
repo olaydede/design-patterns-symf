@@ -3,12 +3,18 @@ namespace App\PatternAbstractFactory;
 
 class ConcreteElementBB implements AbstractElementB
 {
-    public function recordVideo()
+    /**
+     * @return string
+     */
+    public function recordVideo(): string
     {
         return 'I am a ' . get_class($this) . ' recording audio in a different way';
     }
 
-    public function outputVideo()
+    /**
+     * @return string
+     */
+    public function outputVideo(): string
     {
         return 'I am a ' . get_class($this) . ' outputting audio in a different way';
     }

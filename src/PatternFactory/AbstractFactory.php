@@ -5,6 +5,9 @@ abstract class AbstractFactory
 {
     abstract public function factoryMethod(): AbstractSubject;
 
+    /**
+     * @return string
+     */
     public function differentOperation()
     {
         $subject = $this->factoryMethod();

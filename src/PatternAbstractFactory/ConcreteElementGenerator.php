@@ -13,16 +13,14 @@ class ConcreteElementGenerator
         $this->factory = $factory;
     }
 
-    public function generate()
+    /**
+     * @return AbstractElementA|AbstractElementB
+     */
+    public function generate(): AbstractElementA|AbstractElementB
     {
-        $randomTypeSelector = rand(1,2);
-        switch ($randomTypeSelector) {
-            case 1:
-                return $this->factory->createA();
-                break;
-            default:
-                return $this->factory->createB();
-                break;
-        }
+        return match (rand(1, 2)) {
+            1 => $this->factory->createA(),
+            default => $this->factory->createB(),
+        };
     }
 }
