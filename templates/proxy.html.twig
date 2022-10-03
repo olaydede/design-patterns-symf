@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Proxy Pattern</h1>
+            <p>
+                The Proxy Pattern is mainly used to control access to a particular object. This is usually done by performing an action before or after the request has reached the object.<br />
+                Both the Proxy and the original object must implement the same interface. The client can be left agnostic of which it receives and is only concerned about the actions it wants to execute.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Resource hungry service</h2>
+            <p>
+                A proxy can be used to hold off calling a resource hungry service until absolutely necessary.
+                It can also help prevent unnecessary calls in some situations.
+            </p>
+            <p>
+                See the example below. When our services <kbd>RealService</kbd> has to be prepared, the proxy <kbd>ProxyService</kbd> will actually check its status.<br />
+                On the first time we will need to call the resource hungry method. The second time around <kbd>ProxyService</kbd> will notice it's unnecessary and handle accordingly.
+            </p>
+            {{ dump(client.service.prepare) }}
+            {{ dump(client.service.prepare) }}
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Caching</h2>
+            <p>
+                A proxy can be used to avoid heavy executions by caching results.
+            </p>
+            <p>
+                See the example below. When our services <kbd>RealService</kbd> has to execute the first time, the proxy <kbd>ProxyService</kbd> will cache the results.<br />
+                The second time around <kbd>ProxyService</kbd> will notice it's unnecessary to execute and will return the cached results.
+            </p>
+            {{ dump(client.service.execute) }}
+            {{ dump(client.service.execute) }}
+        </div>
+    </div>
+</div>
