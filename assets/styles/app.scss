@@ -1,2 +1,5 @@
-$primary: darken(#486cba, 5%);
+$primary: darken(#486cba, 20%);
 @import "bootstrap";
+$fa-border-radius: 5px;
+$fa-border-color: $primary;
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
