@@ -5,7 +5,17 @@
         <div class="col">
             <h1>Abstract Factory Pattern</h1>
             <p>
-                In this example I am building an Abstract Factory Pattern.
+                This is an example of an Abstract Factory Pattern.
+            </p>
+            <p>
+                The Abstract Factory Pattern is often times confused with the Factory Method Pattern in that they are both creational patterns and both entail factories.<br />
+                However, both patterns are different from one another and will behave differently.
+            </p>
+            <p>
+                An abstract factory is an object that has multiple factory methods on it. It is used to create a family of classes. Maybe the easiest to remember use-case for it is when creating a UI element in some mobile frameworks.
+                When building the UI, you will be handed a factory by your context. Your code will be asking the factory to create buttons, menus, form elements etc.
+                However, your code will not be aware of what kind of factory it received. Your context might have passed and Android UI factory or an iOS UI factory.
+                Your code will not know if it is creating an Android button or an iOS button. All it knows is that it is creating an abstract button.
             </p>
             <p>
                 You will see that the code is using a custom service to generate random objects. The service itself is injected with a factory. It is agnostic of what type of factory it is and what object it will generate.

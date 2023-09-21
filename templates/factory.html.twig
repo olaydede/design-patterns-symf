@@ -9,8 +9,11 @@
             </p>
             <p>
                 This pattern is used to separate object construction code from the code that will use the object. It makes it easier to extend object construction code independently of the rest of the code.
-                Though they might seem similar, there is a different between a Factory Method and an Abstract Factory.<br />
-                Where Factory Method is implemented by <span class="badge bg-secondary">inheritance</span>, Abstract Factory is implemented by <span class="badge bg-secondary">composition</span>.<br />
+                Though they might seem similar, and in occasion is used interchangeably by some, there is a big difference between a Factory Method Pattern and an Abstract Factory Pattern.
+                -> Where the Factory Method Pattern is implemented by <span class="badge bg-secondary">inheritance</span>, the Abstract Factory Pattern is implemented by <span class="badge bg-secondary">composition</span>.<br />
+            </p>
+            <p>
+                This means that in a Factory Method Pattern, the Factory object can have subclasses that can override the creational method, while in an Abstract Factory Pattern the factory classes must all implement a set of creational methods to be able to create a family of objects related in some way.
             </p>
             <p>
                 A Factory Method is used to create one product while Abstract Factory is about creating families of dependent products.
@@ -24,13 +27,13 @@
         <div class="col">
             <h2>Factory A</h2>
             <code>
-                {{ sorterA.sort }}
+                {{ sorterA.sort | raw }}
             </code>
         </div>
         <div class="col">
             <h2>Factory B</h2>
             <code>
-                {{ sorterB.sort }}
+                {{ sorterB.sort | raw }}
             </code>
         </div>
     </div>

@@ -7,13 +7,13 @@ use App\PatternVisitor\ThirdConcreteVisitor;
 use App\PatternVisitor\VisiteeA;
 use App\PatternVisitor\VisiteeB;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class VisitorController extends AbstractController
 {
     #[Route("/visitor", name:"visitor")]
-    public function indexAction(Request $request)
+    public function indexAction(): Response
     {
         // Generate visitors
         $visitorA = new FirstConcreteVisitor();

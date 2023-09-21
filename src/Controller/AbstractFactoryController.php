@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-class AbstractFactoryController extends AbstractController
+class  AbstractFactoryController extends AbstractController
 {
     #[Route("/abstract-factory", name:"abstract-factory")]
     public function indexAction(Request $request)

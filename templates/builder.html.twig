@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{%  block body %}
+    <div class="container my-5">
+        <div class="row">
+            <div class="col">
+                <h1>Builder Pattern</h1>
+                <p>
+                    This is an example of a Builder Pattern.
+                </p>
+                <p>
+                    The Builder Pattern is used to separate the construction of a complex object from its representation, ensuring the same construction process can be used to create different representations.
+                    The pattern should be used when the logic for creating the complex object should be independent of the parts that make up the object and how they're assembled.
+                    The pattern is also useful when the construction process must allow different representations for the object that's constructed. In the case of this example it is a Classic style of the product as well as a Modern style.
+                </p>
+                <p>The products below are constructed using a <code>{{ builder }}</code></p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row row-cols-1 g-5">
+            <div class="col">
+                <h3>Premium Product</h3>
+                <code>{{ premiumProduct | nl2br }}</code>
+            </div>
+            <div class="col">
+                <h3>Light Product</h3>
+                <code>{{ lightProduct | nl2br }}</code>
+            </div>
+            <div class="col">
+                <h3>Minimal Product</h3>
+                <code>{{ minimalProduct | nl2br }}</code>
+            </div>
+        </div>
+    </div>
+{% endblock %}

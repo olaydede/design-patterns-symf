@@ -8,6 +8,6 @@ class SubjectA implements AbstractSubject
      */
     public function execute(): string
     {
-        return 'I am a ' . get_class($this) . ' and I do something';
+        return get_class($this);
     }
 }

@@ -12,6 +12,11 @@
                 Let's say the operation that needs to be performed is auxiliary behaviour and does not belong to the business logic.<br />
                 Setting up a visitor is a great solution to provide the functionality without adding logic directly in the object.
             </p>
+            <p>
+                The easiest to remember use-case for a Visitor Pattern could be when you are trying to add XML or CSV export functionalities to some of your models.<br />
+                Because it is not the concern of your model, you would not want to add an exportXML and exportCSV method to your model. You can solve this by using a Visitor Pattern and move that functionality to your concrete Visitor.
+            </p>
+            <p>Put simply, instead of doing <kbd>Visitee.exportXML()</kbd> and <kbd>Visitee.exportCSV()</kbd> respectively, you will be able to do <kbd>Visitee.export(XMLExportVisitor)</kbd> or <kbd>Visitee.export(CSVExportVisitor)</kbd>.</p>
         </div>
     </div>
 </div>
